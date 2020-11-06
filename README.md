@@ -17,6 +17,8 @@ IDLE
 ----------
 How to Run
 ----------
+Download CV_builder.py
+
 Open IDLE -> File -> Open -> CV_builder.py -> Run -> Run Module
 
 Click 'Build in Word' and answer the questions in the Python Shell
