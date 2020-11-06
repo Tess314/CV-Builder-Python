@@ -3,9 +3,11 @@ from docx import Document
 
 def word_build():
     document = Document()
+
+    print("Firstly we'll need a few details from you:")
     
     #DETAILS
-    name = input("\nEnter your full name:\n")
+    name = input("\nYour full name:\n")
     document.add_heading(name, 0)
 
     #EDUCATION
@@ -28,10 +30,10 @@ def word_build():
     section2 = document.add_paragraph(experience)
 
     #SKILLS AND INTERESTS
-    personality = input("What's one word that describes you?\n")
-    interest = input("What industry is the job you're applying for?\n")
-    skill = input("What is your greatest skill?\n")
-    print("\nCheck your files to see your brand new CV!")
+    personality = input("What's one word that describes you? (enter in lowercase)\n")
+    interest = input("What industry is the job you're applying for? (enter in lowercase)\n")
+    skill = input("What is your greatest skill? (enter in lowercase)\n")
+    print("\nCheck your files to see your brand new CV! Thank you for using CV Builder.")
 
     skills = ["I am " + personality + " with interest and experience in the " + interest + " sector.\nMy greatest skill is " + skill + " which makes me a valuable addition to any " + interest + " team."]
     title3 = document.add_paragraph("\nSKILLS AND INTERESTS")
@@ -50,7 +52,7 @@ label = tk.Label(root, text='CV Builder')
 label.config(font=('helvetica', 14))
 canvas.create_window(200, 40, window=label)
 
-button = tk.Button(text='Build in Word', command=word_build)
+button = tk.Button(text='Build Now!', command=word_build)
 canvas.create_window(200, 140, window=button)
 
 root.mainloop()
