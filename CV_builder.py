@@ -1,9 +1,11 @@
 import tkinter as tk
 from docx import Document
+from docx2pdf import convert
 
-def word_build():
-    document = Document()
+document = Document()
 
+#method to get input data from user
+def data():
     print("Firstly we'll need a few details from you:")
     
     #DETAILS
@@ -39,7 +41,16 @@ def word_build():
     title3 = document.add_paragraph("\nSKILLS AND INTERESTS")
     section3 = document.add_paragraph(skills)
 
+
+#method to save CV as Word document
+def word_build():
+    data()
     document.save("CV.docx")
+
+#method to save CV as Rich Text Format
+def rtf_build():
+    data()
+    document.save("CV.rtf")
 
 
 #GUI
@@ -52,7 +63,14 @@ label = tk.Label(root, text='CV Builder')
 label.config(font=('helvetica', 14))
 canvas.create_window(200, 40, window=label)
 
-button = tk.Button(text='Build Now!', command=word_build)
+label = tk.Label(root, text='Pick a file format below')
+label.config(font=('helvetica', 12))
+canvas.create_window(200, 60, window=label)
+
+button = tk.Button(text='Build in Word', command=word_build)
 canvas.create_window(200, 140, window=button)
+
+button = tk.Button(text='Build as RTF', command=rtf_build)
+canvas.create_window(200, 180, window=button)
 
 root.mainloop()
