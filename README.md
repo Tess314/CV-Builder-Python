@@ -21,4 +21,4 @@ Download CV_builder.py
 
 Open IDLE -> File -> Open -> CV_builder.py -> Run -> Run Module
 
-Click either 'Build in Word' or 'Build in RTF'
+Click either 'Build in Word' or 'Build as RTF'
